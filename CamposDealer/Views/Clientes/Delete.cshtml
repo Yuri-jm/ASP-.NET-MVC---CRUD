@@ -1,0 +1,33 @@
+﻿@model Clientes
+
+<form method="post"asp-action="DeletePOST">
+    <input asp-for="ID" hidden/>
+
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Excluir Cliente</h2>
+            <hr />
+        </div>
+      
+        <div class="mb-3">
+            <label asp-for="nmCliente">Nome</label>
+            <input asp-for="nmCliente" disabled class="form-control"/>
+         
+        </div>
+        <div class="mb-3">
+            <label asp-for="nomeDaCidade">Cidade</label>
+            <input asp-for="nomeDaCidade" disabled class="form-control"/>
+            
+        </div>
+       
+        <button type="submit" class="btn btn-danger" style="width:150px">Excluir</button>
+        <a asp-controller="Clientes" asp-action="Index" class="btn btn-secondary" style="width:150px">Voltar</a>
+    </div>
+</form>
+@*Para validar apenas no lado cliente me vez de validar no servidor*@
+@section Scripts{
+@{
+    <partial name="_ValidationScriptsPartial"/>
+}
+}
+

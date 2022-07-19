@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Vendas>
+    @{
+    ViewData["Title"] = "Index";
+    }
+
+    <h1>Vendas</h1>
+
+    <table class="table table-border table-striped" style="width:100%" </table>
+    <thead>
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                ID do cliente
+            </th>
+            <th>
+                ID do produto
+            </th>
+            <th>
+                Quantidade
+            </th>
+            <th>
+                Valor unitário
+            </th>
+            <th>
+                Horário
+            </th>
+            <th>
+                Total
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var obj in Model)
+    {
+        <tr>
+            <td width=5%>
+                @obj.ID
+            </td>
+            <td width=5%>
+                @obj.idCliente
+            </td>
+            <td width=5%>
+                @obj.IdProduto
+            </td>
+            <td width=5%>
+                @obj.qtdVenda
+            </td>
+            <td width=5%>
+                @obj.vlrUnitarioVenda
+            </td>
+            <td width=5%>
+                @obj.dthVenda
+            </td>
+            <td width=5%>
+                @obj.vlrTotalVenda
+            </td>
+        </tr>
+    }
+    </tbody>

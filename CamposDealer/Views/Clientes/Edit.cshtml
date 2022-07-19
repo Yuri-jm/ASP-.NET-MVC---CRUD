@@ -1,0 +1,34 @@
+﻿@model Clientes
+
+<form method="post"asp-action="Edit">
+
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Editar Cliente</h2>
+            <hr />
+        </div>
+        @*Listar todos os erros na ausência de preechimento*@
+        <div asp-validation-summary="All"></div>
+        <div class="mb-3">
+            <label asp-for="nmCliente">Nome</label>
+            <input asp-for="nmCliente" class="form-control"/>
+           @* Criar mensagem de alerta para falta de preenchimento em campos*@
+           @* <span asp-validation-for="ID" class="text-danger"></span>*@
+        </div>
+        <div class="mb-3">
+            <label asp-for="nomeDaCidade">Cidade</label>
+            <input asp-for="nomeDaCidade" class="form-control"/>
+            <span asp-validation-for="nomeDaCidade" class="text-danger"></span>
+        </div>
+       
+        <button type="submit" class="btn btn-primary" style="width:150px">Atualizar</button>
+        <a asp-controller="Clientes" asp-action="Index" class="btn btn-secondary" style="width:150px">Voltar</a>
+    </div>
+</form>
+@*Para validar apenas no lado cliente me vez de validar no servidor*@
+@section Scripts{
+@{
+    <partial name="_ValidationScriptsPartial"/>
+}
+}
+
